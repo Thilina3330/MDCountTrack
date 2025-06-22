@@ -156,7 +156,7 @@ tools:context=".MainActivity3">
         app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945"
+        app:layout_constraintVertical_bias="0.922"
         tools:ignore="MissingConstraints,ImageContrastCheck" />
 
     <ImageView
@@ -175,6 +175,23 @@ tools:context=".MainActivity3">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.961"
         tools:ignore="TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/goToSettings"
+        android:layout_width="79dp"
+        android:layout_height="89dp"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:contentDescription="@string/settingsss"
+        android:focusable="true"
+        android:src="@drawable/settinglogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96"
+        tools:ignore="ContentDescription,ImageContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

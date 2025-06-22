@@ -9,4 +9,9 @@
     <item name="btnGoToAcceptTableActivity" type="id" />
     <item name="goToTableBtn" type="id" tools:ignore="DuplicateDefinition" />
     <item name="baaaa" type="id" />
+    <item name="darkModeSwitch" type="id" />
+    <item name="notificationSwitch" type="id" />
+    <item name="dummySettingSwitch" type="id" />
+    <item name="backBtn" type="id" />
+    <item name="createAccountBtn" type="id" />
 </resources>
