@@ -1,5 +1,6 @@
 package com.s23010733.md_count_track;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -13,6 +14,8 @@ public class MainActivity3 extends AppCompatActivity {
     EditText barcodeInput, qtyInput;
     Button acceptBtn, rejectBtn, resetBtn;
 
+    DatabaseHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,27 +26,40 @@ public class MainActivity3 extends AppCompatActivity {
         acceptBtn = findViewById(R.id.acceptBtn);
         rejectBtn = findViewById(R.id.rejectBtn);
         resetBtn = findViewById(R.id.resetBtn);
+        dbHelper = new DatabaseHelper(this);
 
+        // ✅ Accept button - save to DB
         acceptBtn.setOnClickListener(v -> {
             String barcode = barcodeInput.getText().toString().trim();
             String qty = qtyInput.getText().toString().trim();
+            String shift = getIntent().getStringExtra("shift"); // Get shift from previous activity
 
             if (barcode.isEmpty() || qty.isEmpty()) {
                 Toast.makeText(this, "Please enter both barcode and quantity", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Accepted\nBarcode: " + barcode + "\nQty: " + qty, Toast.LENGTH_LONG).show();
-                // TODO: Save to database or update list
+                ContentValues values = new ContentValues();
+                values.put("barcode", barcode);
+                values.put("quantity", qty);
+                values.put("shift", shift);
+
+                long result = dbHelper.getWritableDatabase().insert(DatabaseHelper.ACCEPT_TABLE, null, values);
+
+                if (result != -1) {
+                    Toast.makeText(this, "Saved: " + barcode, Toast.LENGTH_SHORT).show();
+                    barcodeInput.setText("");
+                    qtyInput.setText("");
+                } else {
+                    Toast.makeText(this, "Error saving!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         rejectBtn.setOnClickListener(v -> {
             String barcode = barcodeInput.getText().toString().trim();
-
             Intent intent = new Intent(MainActivity3.this, RejectActivity.class);
-            intent.putExtra("rejected_barcode", barcode); // ✅ Send barcode
+            intent.putExtra("rejected_barcode", barcode);
             startActivity(intent);
         });
-
 
         resetBtn.setOnClickListener(v -> {
             barcodeInput.setText("");
@@ -51,7 +67,6 @@ public class MainActivity3 extends AppCompatActivity {
         });
 
         ImageView imgGoToTable = findViewById(R.id.imgGoToTable);
-
         imgGoToTable.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity3.this, TableActivity.class);
             startActivity(intent);
@@ -62,15 +77,6 @@ public class MainActivity3 extends AppCompatActivity {
             Intent intent = new Intent(MainActivity3.this, SummaryReportActivity.class);
             startActivity(intent);
         });
-
-
-
-
-
-
-
-
-
     }
 
 }
