@@ -2,7 +2,6 @@ package com.s23010733.md_count_track;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -53,7 +52,7 @@ public class MainActivity3 extends AppCompatActivity {
 
         ImageView imgGoToTable = findViewById(R.id.imgGoToTable);
 
-        ((View) imgGoToTable).setOnClickListener(v -> {
+        imgGoToTable.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity3.this, TableActivity.class);
             startActivity(intent);
         });
@@ -63,6 +62,7 @@ public class MainActivity3 extends AppCompatActivity {
             Intent intent = new Intent(MainActivity3.this, SummaryReportActivity.class);
             startActivity(intent);
         });
+
 
 
 
