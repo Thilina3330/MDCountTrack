@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <item name="barcodeInput" type="id" />
+    <item name="qtyInput" type="id" />
+    <item name="resetBtn" type="id" />
+    <item name="acceptBtn" type="id" />
+    <item name="rejectBtn" type="id" />
+    <item name="bottomNav" type="id" />
+    <item name="btnGoToAcceptTableActivity" type="id" />
+    <item name="goToTableBtn" type="id" tools:ignore="DuplicateDefinition" />
+    <item name="baaaa" type="id" />
+</resources>

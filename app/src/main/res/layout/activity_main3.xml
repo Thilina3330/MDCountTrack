@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#D5108FB4"
+android:padding="16dp"
+tools:context=".MainActivity3">
+
+    <ImageView
+        android:id="@+id/bottomLogo"
+        android:layout_width="538dp"
+        android:layout_height="431dp"
+        android:layout_marginTop="107dp"
+        android:alpha="0.2"
+        android:contentDescription="@string/todoo"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints,VisualLintBounds,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="284dp"
+        android:layout_height="117dp"
+        android:autofillHints=""
+        android:background="#6F1D96BF"
+        android:backgroundTintMode="src_in"
+        android:shadowColor="#29C4CC"
+        android:text="@string/md"
+        android:textColor="#1228A4"
+        android:textColorHighlight="#270FA9"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/barcodeInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:background="#80401C08"
+        android:hint="@string/enter_barcod"
+        android:inputType="text"
+        android:padding="12dp"
+        android:textColor="#D7CCC8"
+        android:textColorHint="#80DEEA"
+        android:textColorLink="#120505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintVertical_bias="0.025"
+        tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="#FFEB3B"
+        android:text="@string/reset"
+        android:textColor="#263238"
+        android:textColorLink="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/acceptBtn"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="115dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:backgroundTint="#4CAF50"
+        android:text="ACCEPT"
+        android:textColor="#263238"
+        android:textColorLink="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
+
+
+    <Button
+        android:id="@+id/rejectBtn"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:backgroundTint="#F44336"
+        android:text="REJECT"
+        android:textColor="#000000"
+        android:textColorLink="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.964"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.617"
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck,VisualLintButtonSize" />
+
+
+
+    <EditText
+        android:id="@+id/qtyInput"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:background="#80401C08"
+        android:hint="@string/enter_qtye"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textColor="#D7CCC8"
+        android:textColorHint="#80DEEA"
+        android:textColorLink="#120505"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.354"
+        tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/imgGoToTable"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:contentDescription="@string/go_to_tablel"
+        android:focusable="true"
+        android:src="@drawable/tablelogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945"
+        tools:ignore="MissingConstraints,ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/goToSummary"
+        android:layout_width="74dp"
+        android:layout_height="82dp"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:contentDescription="@string/summary"
+        android:focusable="true"
+        android:src="@drawable/summrylogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,58 @@
+<resources>
+    <!-- Login -->
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="sign_in">Sign In</string>
+
+    <!-- EPF Screen (MainActivity2) -->
+    <string name="enter_your_epf_number">Enter your EPF Number</string>
+    <string name="select_your_shift">Select your shift</string>
+    <string name="enter">Enter</string>
+
+    <!-- MainActivity3 (Barcode Entry) -->
+    <string name="enter_barcode">Enter Barcode</string>
+    <string name="enter_barcode_number">Enter Barcode Number</string>
+    <string name="enter_qty">Enter Quantity</string>
+    <string name="accept">ACCEPT</string>
+    <string name="reject">REJECT</string>
+    <string name="reset">RESET</string>
+
+    <!-- Cleaned / corrected empty strings -->
+    <string name="rejectt">REJECT</string>
+    <string name="enter_barcod">Enter Barcode</string>
+    <string name="enter_qtye">Enter Quantity</string>
+    <string name="resettt">Reset</string>
+
+    <!-- RejectActivity -->
+    <string name="rejected_barcode">Rejected Barcode:</string>
+    <string name="enter_reason_for_rejection">Enter reason for rejection</string>
+    <string name="enter_reason_forrejection">Enter reason for rejection</string>
+    <string name="submit_reject">SUBMIT REJECT</string>
+    <string name="submitreject">SUBMIT REJECT</string>
+    <string name="rejectedbarcodeeee">Rejected Barcode</string>
+
+    <!-- Sample placeholder -->
+    <string name="_25">25</string>
+    <string name="todo">TODO</string>
+    <string name="app_name" />
+    <string name="md_count_track_logo" />
+    <string name="mas_logo" />
+    <string name="md_count_track" />
+    <string name="enterqty">\n</string>
+    <string name="rejecttt" />
+    <string name="md">MD COUNT TRACK</string>
+    <string name="reason_prompt" />
+    <string name="acceptt">Accept</string>
+    <string name="rrreject">Reject</string>
+    <string name="table">TABLE</string>
+    <string name="search">Search</string>
+    <string name="eenter">Enter</string>
+    <string name="todooo">TODO</string>
+    <string name="go_to_table">Go to Table</string>
+    <string name="todoo">TODO</string>
+    <string name="go_to_tableee">Go to Table</string>
+    <string name="go_to_tablel">Go to Table</string>
+    <string name="summary">Summary</string>
+    <string name="summary_report">Summary Report</string>
+
+</resources>
