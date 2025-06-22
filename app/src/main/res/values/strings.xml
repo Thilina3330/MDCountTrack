@@ -54,5 +54,7 @@
     <string name="go_to_tablel">Go to Table</string>
     <string name="summary">Summary</string>
     <string name="summary_report">Summary Report</string>
+    <string name="accepted_barcode_data">✅ Accepted Barcode Data</string>
+    <string name="btnGoToAcceptTable" />
 
 </resources>

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MD_count_track"
         tools:targetApi="31">
         <activity
+            android:name=".AcceptTableActivity"
+            android:exported="false" />
+        <activity
             android:name=".SummaryReportActivity"
             android:exported="false" />
         <activity
