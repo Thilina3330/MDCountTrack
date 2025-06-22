@@ -77,6 +77,14 @@ public class MainActivity3 extends AppCompatActivity {
             Intent intent = new Intent(MainActivity3.this, SummaryReportActivity.class);
             startActivity(intent);
         });
-    }
 
+        ImageView goToSettings = findViewById(R.id.goToSettings);
+
+        goToSettings.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity3.this, SettingsuI.class);
+            startActivity(intent);
+        });
+
+
+    }
 }
