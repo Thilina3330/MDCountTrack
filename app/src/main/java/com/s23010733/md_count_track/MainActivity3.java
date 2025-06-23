@@ -28,6 +28,7 @@ public class MainActivity3 extends AppCompatActivity {
         resetBtn = findViewById(R.id.resetBtn);
         dbHelper = new DatabaseHelper(this);
 
+        // Accept button - save to DB
         acceptBtn.setOnClickListener(v -> {
             String barcode = barcodeInput.getText().toString().trim();
             String qty = qtyInput.getText().toString().trim();
@@ -78,12 +79,10 @@ public class MainActivity3 extends AppCompatActivity {
         });
 
         ImageView goToSettings = findViewById(R.id.goToSettings);
-
         goToSettings.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity3.this, SettingsuI.class);
             startActivity(intent);
         });
-
-
     }
 }
+
