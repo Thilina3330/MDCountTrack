@@ -7,6 +7,7 @@
     android:background="#BE3EA2AF"
     android:padding="24dp">
 
+
     <ImageView
         android:id="@+id/bottomLogo"
         android:layout_width="538dp"
@@ -17,12 +18,11 @@
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.958"
         tools:ignore="MissingConstraints,VisualLintBounds,ImageContrastCheck" />
-
 
     <TextView
         android:id="@+id/title"
@@ -49,7 +49,7 @@
         android:id="@+id/settingsTitle"
         android:layout_width="113dp"
         android:layout_height="53dp"
-        android:text="@string/settings"
+        android:text="@string/settingss"
         android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,42 +60,44 @@
         app:layout_constraintVertical_bias="0.231"
         tools:ignore="MissingConstraints,TextSizeCheck" />
 
+
     <Switch
         android:id="@+id/switchDarkMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:text="@string/dark_mode"
+        android:text="@string/dark_mod"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376"
+        app:layout_constraintVertical_bias="0.387"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
-
 
     <Button
         android:id="@+id/locationBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/open_location"
+        android:text="open_location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.815"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/log_out"
+        android:text="log_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971" />
+        app:layout_constraintVertical_bias="0.971"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

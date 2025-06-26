@@ -27,12 +27,12 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        // 🔹 Bind Views
+        // Bind Views
         spinnerShift = findViewById(R.id.spinnerShift);
         epfNumber = findViewById(R.id.epfNumber);
         enterBtn = findViewById(R.id.enterBtn);
 
-        // 🔹 Setup Spinner Data
+        //  Setup Spinner Data
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -41,7 +41,7 @@ public class MainActivity2 extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerShift.setAdapter(adapter);
 
-        // 🔹 Spinner selection listener
+        // Spinner selection listener
         spinnerShift.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -54,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        // 🔹 ENTER button click
+        // ENTER button click
         enterBtn.setOnClickListener(v -> {
             String epfText = epfNumber.getText().toString().trim();
 

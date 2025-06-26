@@ -64,7 +64,7 @@
         android:id="@+id/rejectedBarcodeView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/rejectedbarcodeeee"
+        android:text="@string/rejected_barcodeeee"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,20 +87,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.623"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/submitRejectBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/submitreject"
+        android:text="submit reject"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.941"
-        tools:ignore="VisualLintButtonSize" />
+        tools:ignore="HardcodedText,VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
