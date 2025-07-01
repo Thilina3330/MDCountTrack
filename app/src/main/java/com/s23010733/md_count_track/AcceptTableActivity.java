@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AcceptTableActivity extends AppCompatActivity {
 
     TableLayout tableLayout;
-    DatabaseHelper dbHelper; // ⬅️ Now using standalone helper
+    DatabaseHelper dbHelper; //  using standalone helper
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

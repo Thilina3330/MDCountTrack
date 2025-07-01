@@ -37,9 +37,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.037" />
 
-
-    <!-- Bottom Nav -->
-
     <EditText
         android:id="@+id/searchInput"
         android:layout_width="0dp"
@@ -62,13 +59,14 @@
         android:id="@+id/enterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/eenter"
+        android:text="Enter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.306"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/acceptTableBtn"
@@ -77,10 +75,10 @@
         android:layout_marginTop="24dp"
         android:autoText="false"
         android:background="#FFEB3B"
+        android:contentDescription="@string/btnGoToAcceptTable"
         android:text="@string/acceptt"
         android:textColor="@color/white"
         android:textColorLink="#2516E7"
-        android:contentDescription="@string/btnGoToAcceptTable"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -95,7 +93,7 @@
         android:layout_height="80dp"
         android:layout_marginTop="14dp"
         android:background="#FFEB3B"
-        android:text="@string/rrreject"
+        android:text="reject"
         android:textColor="@color/white"
         android:textColorLink="#153DCE"
         app:layout_constraintBottom_toBottomOf="parent"

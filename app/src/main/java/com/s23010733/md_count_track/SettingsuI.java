@@ -24,20 +24,20 @@ public class SettingsuI extends AppCompatActivity {
 
         switchDarkMode = findViewById(R.id.switchDarkMode);
         btnLogout = findViewById(R.id.btnLogout);
-        btnOpenMap = findViewById(R.id.locationBtn); // new location button
+        btnOpenMap = findViewById(R.id.locationBtn);
 
-        // Dark Mode switch (for now, just toast)
+        // Dark Mode switch
         switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
             String msg = isChecked ? "Dark Mode Enabled" : "Dark Mode Disabled";
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         });
 
-        // Logout
+        // Logout button
         btnLogout.setOnClickListener(v -> finish());
 
-        // Location Button - open Google Maps at a location
+        // Location Button - open Google Maps at Thulhiriya location
         btnOpenMap.setOnClickListener(v -> {
-            String geoUri = "geo:6.9271,79.8612?q=Colombo";
+            String geoUri = "geo:7.275572944640557,80.21751931394009?q=7.275572944640557,80.21751931394009(Thulhiriya+76G8+5XC)";
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
             intent.setPackage("com.google.android.apps.maps");
 
@@ -47,10 +47,6 @@ public class SettingsuI extends AppCompatActivity {
                 Toast.makeText(this, "Google Maps is not installed", Toast.LENGTH_SHORT).show();
             }
         });
-        @SuppressLint("CutPasteId") Button btnLocation = findViewById(R.id.btnLogout);
-        btnLocation.setOnClickListener(v -> {
-            Intent intent = new Intent(SettingsuI.this, goolemap.class);
-            startActivity(intent);
-        });
+
     }
 }

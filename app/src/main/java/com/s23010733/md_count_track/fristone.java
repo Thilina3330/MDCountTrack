@@ -11,8 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class fristone extends AppCompatActivity {
 
     EditText emailField, passwordField;
-    Button signinBtn, logingBtn;
-
+    Button loginBtn, signinBtn;
     DatabaseHelper dbHelper;
 
     @Override
@@ -22,38 +21,36 @@ public class fristone extends AppCompatActivity {
 
         emailField = findViewById(R.id.email);
         passwordField = findViewById(R.id.password);
+        loginBtn = findViewById(R.id.logingbtn);    // Check your XML id matches this
         signinBtn = findViewById(R.id.signinBtn);
-        logingBtn = findViewById(R.id.logingbtn);
 
         dbHelper = new DatabaseHelper(this);
 
-        // -------- LOGIN BUTTON --------
-        logingBtn.setOnClickListener(v -> {
+        // Login → Validate and go to MainActivity2
+        loginBtn.setOnClickListener(v -> {
             String email = emailField.getText().toString().trim();
-            String password = passwordField.getText().toString();
+            String password = passwordField.getText().toString().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show();
-                return;
-            }
-
-            if (!dbHelper.checkEmailExists(email)) {
-                // No account exists → go to MainActivity (create account screen)
-                Toast.makeText(this, "No account found. Please create one.", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(fristone.this, MainActivity.class); // navigate to signup screen
-                intent.putExtra("email", email); // optional: pass entered email
-                startActivity(intent);
-                finish();
-            } else if (dbHelper.checkUser(email, password)) {
-                // Login success → go to MainActivity2
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(fristone.this, MainActivity2.class));
-                finish();
+                Toast.makeText(fristone.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Incorrect password", Toast.LENGTH_SHORT).show();
+                //  Validate login credentials
+                boolean isValid = dbHelper.checkUser(email, password);
+                if (isValid) {
+                    Toast.makeText(fristone.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(fristone.this, MainActivity2.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(fristone.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                }
             }
+        });
+
+        //  Sign In → Go to Sign Up
+        signinBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(fristone.this, MainActivity.class);
+            startActivity(intent);
         });
     }
 }
-
-

@@ -27,9 +27,12 @@ class goolemap extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        // 🗺️ Set default location to Colombo
-        LatLng colombo = new LatLng(6.9271, 79.8612);
-        googleMap.addMarker(new MarkerOptions().position(colombo).title("Colombo"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(colombo, 12));
+        // Thulhiriya Location
+        LatLng thulhiriya = new LatLng(7.275572944640557, 80.21751931394009);
+
+        // Add Marker and Move Camera
+        googleMap.addMarker(new MarkerOptions().position(thulhiriya).title("Thulhiriya (76G8+5XC)"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(thulhiriya, 15)); // Zoom level 15 for closer view
     }
+
 }

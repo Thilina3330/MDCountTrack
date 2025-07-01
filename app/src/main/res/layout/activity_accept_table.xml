@@ -4,16 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#BE3EA2AF"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="396dp"
+        android:layout_height="58dp"
+        android:paddingBottom="10dp"
         android:text="@string/accepted_barcode_data"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:paddingBottom="10dp" />
+        tools:ignore="VisualLintBounds" />
 
     <ScrollView
         android:layout_width="match_parent"
