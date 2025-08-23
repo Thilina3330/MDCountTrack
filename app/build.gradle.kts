@@ -40,6 +40,9 @@ dependencies {
     // ✅ Google Maps SDK
     implementation(libs.play.services.maps)
 
+    // ✅ Biometric (Fingerprint/Face authentication)
+    implementation("androidx.biometric:biometric:1.2.0-alpha05")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

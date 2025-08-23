@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SummaryReportActivity"
-    android:background="#BE3EA2AF"
+    android:background="@drawable/background"
     android:padding="24dp">
 
 

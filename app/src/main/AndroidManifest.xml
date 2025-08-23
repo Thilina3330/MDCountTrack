@@ -3,9 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.s23010733.md_count_track">
 
-    <!--  Permissions -->
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:ignore="CoarseFineLocation" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
 
     <application
         android:allowBackup="true"
@@ -16,34 +18,69 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MD_count_track"
-        tools:targetApi="31"
-        tools:ignore="ExtraText">
+        tools:ignore="ExtraText"
+        tools:targetApi="31">
 
-        <!--  Google Maps API Key -->
+        <!-- Fingerprint UI -->
+        <activity
+            android:name=".FingerprintAuthActivity"
+            android:exported="false" />
+
+        <!-- Other Activities -->
+        <activity
+            android:name=".RejectTableActivity"
+            android:exported="false" />
+
+        <!-- Google Maps API Key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDsRkQFp0ZjFYSWrxNmdMIefi0IiaQP2Wo" />
 
-        <!--  Google Map Activity -->
-        <activity android:name=".goolemap" android:exported="false" />
+        <activity
+            android:name=".goolemap"
+            android:exported="false" />
 
-        <!--  Main Launcher Activity (fristone) -->
-        <activity android:name=".fristone" android:exported="true">
+        <!-- Main Launcher Activity -->
+        <activity
+            android:name=".fristone"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Other Activities -->
-        <activity android:name=".MainActivity" android:exported="true" />
-        <activity android:name=".SettingsuI" android:exported="false" />
-        <activity android:name=".AcceptTableActivity" android:exported="false" />
-        <activity android:name=".SummaryReportActivity" android:exported="false" />
-        <activity android:name=".TableActivity" android:exported="true" />
-        <activity android:name=".RejectActivity" android:exported="false" />
-        <activity android:name=".MainActivity3" android:exported="false" />
-        <activity android:name=".MainActivity2" android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".SettingsuI"
+            android:exported="false" />
+
+        <activity
+            android:name=".AcceptTableActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".SummaryReportActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".TableActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".RejectActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity3"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
 
     </application>
 

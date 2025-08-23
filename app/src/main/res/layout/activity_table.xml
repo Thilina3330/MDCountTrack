@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#20BACE"
+    android:background="@drawable/background"
     tools:context=".TableActivity">
 
 
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="463dp"
-        android:layout_height="446dp"
+        android:layout_width="347dp"
+        android:layout_height="308dp"
         android:alpha="0.2"
         android:contentDescription="@string/todooo"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.788"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.989"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="ImageContrastCheck,VisualLintBounds" />
 
     <TextView
         android:id="@+id/tableTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="112dp"
+        android:layout_height="40dp"
         android:text="@string/table"
-        android:textSize="26sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139"
+        app:layout_constraintVertical_bias="0.226"
         tools:ignore="TextFields,VisualLintTextFieldSize" />
 
     <Button
@@ -62,16 +62,16 @@
         android:text="Enter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306"
+        app:layout_constraintVertical_bias="0.393"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/acceptTableBtn"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_width="228dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:autoText="false"
         android:background="#FFEB3B"
@@ -89,8 +89,8 @@
 
     <Button
         android:id="@+id/rejectTableBtn"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
+        android:layout_width="222dp"
+        android:layout_height="41dp"
         android:layout_marginTop="14dp"
         android:background="#FFEB3B"
         android:text="reject"
@@ -98,10 +98,10 @@
         android:textColorLink="#153DCE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803"
+        app:layout_constraintVertical_bias="0.695"
         tools:ignore="HardcodedText,TextContrastCheck" />
 
 

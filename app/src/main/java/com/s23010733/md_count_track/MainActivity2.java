@@ -1,7 +1,5 @@
 package com.s23010733.md_count_track;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         epfNumber = findViewById(R.id.epfNumber);
         enterBtn = findViewById(R.id.enterBtn);
 
-        //  Setup Spinner Data
+        // Setup Spinner Data
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_item,
@@ -63,18 +61,13 @@ public class MainActivity2 extends AppCompatActivity {
             } else if (epfText.isEmpty()) {
                 Toast.makeText(MainActivity2.this, "Please enter your EPF number", Toast.LENGTH_SHORT).show();
             } else {
-                // All good → Navigate to MainActivity3
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-
-                // You can pass the shift + epf number like this:
+                // Navigate to FingerprintAuthActivity
+                Intent intent = new Intent(MainActivity2.this, FingerprintAuthActivity.class);
                 intent.putExtra("shift", selectedShift);
                 intent.putExtra("epf", epfText);
-
                 startActivity(intent);
+                finish(); // optional: close MainActivity2
             }
         });
-
     }
 }
-
-

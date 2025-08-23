@@ -2,25 +2,30 @@ package com.s23010733.md_count_track;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class TableActivity extends AppCompatActivity {
 
-    Button btnGoToAcceptTable; // Button to navigate to AcceptTableActivity
+    Button btnGoToAcceptTable, btnGoToRejectTable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table);
 
-        // Connect button from layout
+        // 🔹 Connect buttons by their XML IDs
         btnGoToAcceptTable = findViewById(R.id.acceptTableBtn);
+        btnGoToRejectTable = findViewById(R.id.rejectTableBtn);
 
-        // Set button click listener to open AcceptTableActivity
+        // 🔸 Navigate to Accept Table Activity
         btnGoToAcceptTable.setOnClickListener(v -> {
             Intent intent = new Intent(TableActivity.this, AcceptTableActivity.class);
             startActivity(intent);
         });
+
+
     }
 }

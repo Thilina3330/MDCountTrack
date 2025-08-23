@@ -22,27 +22,22 @@ public class RejectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reject);
 
-        // Bind views
         rejectedBarcodeView = findViewById(R.id.rejectedBarcodeView);
         reasonSpinner = findViewById(R.id.reasonSpinner);
         submitRejectBtn = findViewById(R.id.submitRejectBtn);
 
-        // Get rejected barcode from intent
         String barcode = getIntent().getStringExtra("rejected_barcode");
         if (barcode == null || barcode.isEmpty()) {
             barcode = "Not Provided";
         }
 
-        // Display the barcode on screen
         rejectedBarcodeView.setText("Rejected Barcode: " + barcode);
 
-        // Spinner setup
         String[] reasons = {"Select Reason", "MD Fail", "Quantity Error"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, reasons);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         reasonSpinner.setAdapter(adapter);
 
-        //  Submit button click
         String finalBarcode = barcode;
         submitRejectBtn.setOnClickListener(v -> {
             String selectedReason = reasonSpinner.getSelectedItem().toString();
@@ -51,7 +46,8 @@ public class RejectActivity extends AppCompatActivity {
                 Toast.makeText(this, "Please select a rejection reason", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, "Rejected Barcode: " + finalBarcode + "\nReason: " + selectedReason, Toast.LENGTH_LONG).show();
-                finish(); // Close RejectActivity
+                setResult(RESULT_OK); // Return success result
+                finish(); // Close and go back
             }
         });
     }

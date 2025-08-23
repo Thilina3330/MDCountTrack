@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#19C2CE"
+    android:background="@drawable/background"
     android:padding="24dp">
 
 
@@ -39,17 +39,18 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="ImageContrastCheck" />
 
+
     <TextView
         android:id="@+id/title"
         android:layout_width="284dp"
         android:layout_height="117dp"
         android:autofillHints=""
-        android:background="#6F1D96BF"
+        android:background="#6F568595"
         android:backgroundTintMode="src_in"
-        android:shadowColor="#29C4CC"
+        android:shadowColor="#D9E1E2"
         android:text="@string/md"
-        android:textColor="#1228A4"
-        android:textColorHighlight="#270FA9"
+        android:textColor="#4CAF50"
+        android:textColorHighlight="#4CAF50"
         android:textSize="50sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,36 +58,36 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.132"
+        tools:ignore="MissingConstraints,TextSizeCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/rejectedBarcodeView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="37dp"
         android:text="@string/rejected_barcodeeee"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.433" />
+        app:layout_constraintVertical_bias="0.445" />
 
     <Spinner
         android:id="@+id/reasonSpinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="296dp"
+        android:layout_height="51dp"
         android:minHeight="48dp"
         android:prompt="@string/reason_prompt"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.462"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623"
+        app:layout_constraintVertical_bias="0.626"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -100,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
+        app:layout_constraintVertical_bias="0.867"
         tools:ignore="HardcodedText,VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

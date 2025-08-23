@@ -5,28 +5,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BE3EA2AF"
-    android:backgroundTint="#AF32CC87"
     android:backgroundTintMode="screen"
+    android:background="@drawable/background"
     tools:ignore="ExtraText">
 
 
     <ImageView
         android:id="@+id/bottomLogo"
-        android:layout_width="538dp"
-        android:layout_height="431dp"
+        android:layout_width="437dp"
+        android:layout_height="399dp"
         android:layout_marginTop="107dp"
         android:alpha="0.2"
         android:contentDescription="@string/md_count_track_logo"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints,VisualLintBounds,ImageContrastCheck" />
-
 
     <EditText
         android:id="@+id/email"
@@ -35,8 +33,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:autofillHints=""
-        android:background="#43142CE2"
-        android:backgroundTint="@color/black"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:hint="@string/enter_your_email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
@@ -56,8 +54,8 @@
         android:layout_height="48dp"
         android:layout_marginTop="60dp"
         android:autofillHints=""
-        android:background="#43142CE2"
-        android:backgroundTint="@color/black"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
         android:hint="@string/enter_your_password"
         android:inputType="textPassword"
         android:padding="10dp"
@@ -82,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009"
+        app:layout_constraintVertical_bias="0.024"
         tools:ignore="ImageContrastCheck" />
 
     <TextView
@@ -90,36 +88,37 @@
         android:layout_width="284dp"
         android:layout_height="117dp"
         android:autofillHints=""
-        android:background="#6F1D96BF"
+        android:background="#6F568595"
         android:backgroundTintMode="src_in"
-        android:shadowColor="#29C4CC"
+        android:shadowColor="#D9E1E2"
         android:text="@string/md"
-        android:textColor="#1228A4"
-        android:textColorHighlight="#270FA9"
+        android:textColor="#4CAF50"
+        android:textColorHighlight="#4CAF50"
         android:textSize="50sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131"
-        tools:ignore="MissingConstraints,TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.174"
+        tools:ignore="MissingConstraints,TextSizeCheck,TextContrastCheck" />
 
     <Button
         android:id="@+id/signinBtn"
         android:layout_width="273dp"
         android:layout_height="47dp"
         android:layout_marginTop="350dp"
-        android:backgroundTint="#003366"
+        android:backgroundTint="#640814"
         android:text="@string/sign_in"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"
+        app:layout_constraintVertical_bias="0.769"
         tools:ignore="DuplicateIds,MissingConstraints,TouchTargetSizeCheck" />
 
     <Button
@@ -127,15 +126,16 @@
         android:layout_width="273dp"
         android:layout_height="47dp"
         android:layout_marginTop="350dp"
-        android:backgroundTint="#003366"
+        android:backgroundTint="#BC1428"
         android:text="Login"
         android:textColor="#ffffff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44"
+        app:layout_constraintVertical_bias="0.583"
         tools:ignore="DuplicateIds,HardcodedText,MissingConstraints,TouchTargetSizeCheck" />
 
 

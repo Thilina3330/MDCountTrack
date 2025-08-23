@@ -4,46 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BE3EA2AF"
+    android:background="@drawable/background"
     android:padding="24dp">
 
 
     <ImageView
         android:id="@+id/bottomLogo"
-        android:layout_width="538dp"
-        android:layout_height="431dp"
+        android:layout_width="372dp"
+        android:layout_height="323dp"
         android:layout_marginTop="107dp"
         android:alpha="0.2"
         android:contentDescription="@string/md_count_track_logo"
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints,VisualLintBounds,ImageContrastCheck" />
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="284dp"
-        android:layout_height="117dp"
-        android:autofillHints=""
-        android:background="#6F1D96BF"
-        android:backgroundTintMode="src_in"
-        android:shadowColor="#29C4CC"
-        android:text="@string/md"
-        android:textColor="#1228A4"
-        android:textColorHighlight="#270FA9"
-        android:textSize="50sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022"
-        tools:ignore="MissingConstraints,TextSizeCheck" />
 
     <TextView
         android:id="@+id/settingsTitle"
@@ -54,12 +34,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.452"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231"
+        app:layout_constraintVertical_bias="0.03"
         tools:ignore="MissingConstraints,TextSizeCheck" />
-
 
     <Switch
         android:id="@+id/switchDarkMode"
@@ -69,10 +48,10 @@
         android:text="@string/dark_mod"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387"
+        app:layout_constraintVertical_bias="0.19"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
@@ -82,9 +61,10 @@
         android:text="open_location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815"
+        app:layout_constraintVertical_bias="0.371"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -94,10 +74,9 @@
         android:text="log_out"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
+        app:layout_constraintVertical_bias="0.537"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

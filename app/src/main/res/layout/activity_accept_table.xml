@@ -3,25 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="vertical"
-    android:background="#BE3EA2AF"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="396dp"
-        android:layout_height="58dp"
-        android:paddingBottom="10dp"
-        android:text="@string/accepted_barcode_data"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        tools:ignore="VisualLintBounds" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="194dp"
+        android:layout_height="241dp"
         tools:ignore="SpeakableTextPresentCheck">
-
         <TableLayout
             android:id="@+id/acceptTableLayout"
             android:layout_width="match_parent"

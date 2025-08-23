@@ -5,9 +5,11 @@ xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/main"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="#AF13DCD1"
+    android:background="@drawable/background"
 tools:context=".MainActivity2">
 
+
+    <!-- App Title -->
 
     <ImageView
         android:id="@+id/bottomLogo"
@@ -19,7 +21,7 @@ tools:context=".MainActivity2">
         android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintHorizontal_bias="0.635"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintVertical_bias="1.0"
@@ -29,44 +31,43 @@ tools:context=".MainActivity2">
         android:id="@+id/masLogo"
         android:layout_width="166dp"
         android:layout_height="75dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@string/mas_logo"
         android:src="@drawable/maslog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ImageContrastCheck" />
 
-<!-- App Title -->
     <TextView
         android:id="@+id/title"
         android:layout_width="284dp"
         android:layout_height="117dp"
         android:autofillHints=""
-        android:background="#6F1D96BF"
+        android:background="#6F568595"
         android:backgroundTintMode="src_in"
-        android:shadowColor="#29C4CC"
+        android:shadowColor="#D9E1E2"
         android:text="@string/md"
-        android:textColor="#1228A4"
-        android:textColorHighlight="#270FA9"
+        android:textColor="#4CAF50"
+        android:textColorHighlight="#4CAF50"
         android:textSize="50sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143"
-        tools:ignore="TextSizeCheck" />
+        app:layout_constraintVertical_bias="0.174"
+        tools:ignore="MissingConstraints,TextSizeCheck,TextContrastCheck" />
 
 
-<Spinner
+    <Spinner
     android:id="@+id/spinnerShift"
     android:layout_width="260dp"
     android:layout_height="48dp"
     android:padding="10dp"
     android:spinnerMode="dropdown"
-    android:background="#43142CE2"
+    android:background="@color/white"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.503"
@@ -81,8 +82,8 @@ tools:context=".MainActivity2">
     android:layout_marginStart="24dp"
     android:layout_marginEnd="24dp"
     android:autofillHints=""
-    android:background="#43142CE2"
-    android:backgroundTint="@color/black"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     android:hint="@string/enter_your_epf_number"
     android:inputType="number"
     android:padding="10dp"
@@ -102,7 +103,7 @@ tools:context=".MainActivity2">
     android:layout_width="260dp"
     android:layout_height="48dp"
     android:layout_marginTop="20dp"
-    android:backgroundTint="#003366"
+    android:backgroundTint="#DE131A"
     android:text="ENTER"
     android:textColor="#ffffff"
     android:textStyle="bold"

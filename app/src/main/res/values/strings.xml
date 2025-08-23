@@ -49,4 +49,7 @@
     <string name="reason_prompt" />
     <string name="enter_barcod">enter_barcod</string>
     <string name="enter_qtye">enter_qty</string>
+    <string name="Rject_barcode_data" />
+    <string name="reject_barcode_data">Reject_barcode_data</string>
+    <string name="rejected_barcode_data">Rejected Barcode Data</string>
 </resources>

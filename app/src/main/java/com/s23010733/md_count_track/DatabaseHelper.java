@@ -10,9 +10,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database info
     public static final String DB_NAME = "MDCountTrack.db";
-    public static final int DB_VERSION = 2;
+    public static final int DB_VERSION = 3; // bumped version
 
-    //Accepted data table
+    // Accepted Data Table
     public static final String ACCEPT_TABLE = "accepted_data";
     public static final String COL_ID = "id";
     public static final String COL_BARCODE = "barcode";
@@ -20,7 +20,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_SHIFT = "shift";
     public static final String COL_TIMESTAMP = "timestamp";
 
-    //  Users table (for login/signup)
+    // Rejected Data Table
+    public static final String REJECT_TABLE = "rejected_data";
+    public static final String COL_REASON = "reason";
+    public static final String COL_EPF = "epf";
+
+    // Users Table
     public static final String USER_TABLE = "users";
     public static final String USER_ID = "id";
     public static final String USER_EMAIL = "email";
@@ -32,7 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Accepted data table
+        // Accepted table
         String createAcceptTable = "CREATE TABLE " + ACCEPT_TABLE + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_BARCODE + " TEXT, " +
@@ -40,6 +45,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_SHIFT + " TEXT, " +
                 COL_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
         db.execSQL(createAcceptTable);
+
+        // Rejected table
+        String createRejectTable = "CREATE TABLE " + REJECT_TABLE + " (" +
+                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_BARCODE + " TEXT, " +
+                COL_REASON + " TEXT, " +
+                COL_QTY + " INTEGER, " +
+                COL_SHIFT + " TEXT, " +
+                COL_EPF + " TEXT, " +
+                COL_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
+        db.execSQL(createRejectTable);
 
         // Users table
         String createUserTable = "CREATE TABLE " + USER_TABLE + " (" +
@@ -51,62 +67,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // Drop and recreate tables
         db.execSQL("DROP TABLE IF EXISTS " + ACCEPT_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + REJECT_TABLE);
         db.execSQL("DROP TABLE IF EXISTS " + USER_TABLE);
         onCreate(db);
     }
 
-    //  Insert new user (for Sign In)
+    // Sign In → insert user
     public boolean insertUser(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(USER_EMAIL, email);
         values.put(USER_PASSWORD, password);
-
         long result = db.insert(USER_TABLE, null, values);
         db.close();
         return result != -1;
     }
 
-    //  Check if user email already exists (for Sign In)
+    // Check if email exists
     public boolean checkEmailExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(
-                USER_TABLE,
-                new String[]{USER_ID},
-                USER_EMAIL + "=?",
-                new String[]{email},
-                null, null, null
-        );
+        Cursor cursor = db.query(USER_TABLE, new String[]{USER_ID}, USER_EMAIL + "=?",
+                new String[]{email}, null, null, null);
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         return exists;
     }
 
-    //  Check email/password match (for Login)
+    // Login → check user
     public boolean checkUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(
-                USER_TABLE,
-                new String[]{USER_ID},
+        Cursor cursor = db.query(USER_TABLE, new String[]{USER_ID},
                 USER_EMAIL + "=? AND " + USER_PASSWORD + "=?",
-                new String[]{email, password},
-                null, null, null
-        );
+                new String[]{email, password}, null, null, null);
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         return exists;
     }
 
-    // Optional: Insert accepted barcode data
-    public void insertAcceptedData(String barcode, String qty, String shift) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COL_BARCODE, barcode);
-        values.put(COL_QTY, qty);
-        values.put(COL_SHIFT, shift);
-        db.insert(ACCEPT_TABLE, null, values);
-        db.close();
-    }
 }
