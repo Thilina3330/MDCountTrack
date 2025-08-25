@@ -3,11 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.s23010733.md_count_track">
 
+<<<<<<< HEAD
     <!-- Permissions -->
+=======
+
+    <!--  Permissions -->
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.ACCESS_FINE_LOCATION"
         tools:ignore="CoarseFineLocation" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
+
 
     <application
         android:allowBackup="true"
@@ -21,6 +31,7 @@
         tools:ignore="ExtraText"
         tools:targetApi="31">
 
+<<<<<<< HEAD
         <!-- Fingerprint UI -->
         <activity
             android:name=".FingerprintAuthActivity"
@@ -32,6 +43,10 @@
             android:exported="false" />
 
         <!-- Google Maps API Key -->
+=======
+        <!--  Google Maps API Key -->
+
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDsRkQFp0ZjFYSWrxNmdMIefi0IiaQP2Wo" />
@@ -40,16 +55,28 @@
             android:name=".goolemap"
             android:exported="false" />
 
+<<<<<<< HEAD
         <!-- Main Launcher Activity -->
         <activity
             android:name=".fristone"
             android:exported="true">
+=======
+        <!--  Main Launcher Activity (fristone) -->
+        <activity android:name=".fristone" android:exported="true">
+
+        <activity android:name=".goolemap" android:exported="false" />
+
+
+        <activity android:name=".MainActivity" android:exported="true">
+
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <activity
             android:name=".MainActivity"
             android:exported="true" />
@@ -81,6 +108,28 @@
         <activity
             android:name=".MainActivity2"
             android:exported="false" />
+=======
+
+        <!-- Other Activities -->
+        <activity android:name=".MainActivity" android:exported="true" />
+        <activity android:name=".SettingsuI" android:exported="false" />
+        <activity android:name=".AcceptTableActivity" android:exported="false" />
+        <activity android:name=".SummaryReportActivity" android:exported="false" />
+        <activity android:name=".TableActivity" android:exported="true" />
+        <activity android:name=".RejectActivity" android:exported="false" />
+        <activity android:name=".MainActivity3" android:exported="false" />
+        <activity android:name=".MainActivity2" android:exported="false" />
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
+
+        <activity android:name=".fristone" android:exported="true"/>
+        <activity android:name=".SettingsuI" android:exported="false"/>
+        <activity android:name=".AcceptTableActivity" android:exported="false"/>
+        <activity android:name=".SummaryReportActivity" android:exported="false"/>
+        <activity android:name=".TableActivity" android:exported="true"/>
+        <activity android:name=".RejectActivity" android:exported="false"/>
+        <activity android:name=".MainActivity3" android:exported="false"/>
+        <activity android:name=".MainActivity2" android:exported="false"/>
+
 
     </application>
 

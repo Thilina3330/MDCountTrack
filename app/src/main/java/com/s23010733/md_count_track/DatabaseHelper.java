@@ -8,11 +8,15 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    // Database info
     public static final String DB_NAME = "MDCountTrack.db";
     public static final int DB_VERSION = 3;
 
+<<<<<<< HEAD
     // Accepted Data Table
+=======
+    //Accepted data table
+
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
     public static final String ACCEPT_TABLE = "accepted_data";
     public static final String COL_ID = "id";
     public static final String COL_BARCODE = "barcode";
@@ -20,12 +24,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_SHIFT = "shift";
     public static final String COL_TIMESTAMP = "timestamp";
 
+<<<<<<< HEAD
     // Rejected Data Table
     public static final String REJECT_TABLE = "rejected_data";
     public static final String COL_REASON = "reason";
     public static final String COL_EPF = "epf";
 
     // Users Table
+=======
+
+    //  Users table (for login/signup)
+
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
     public static final String USER_TABLE = "users";
     public static final String USER_ID = "id";
     public static final String USER_EMAIL = "email";
@@ -46,6 +56,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
         db.execSQL(createAcceptTable);
 
+<<<<<<< HEAD
         // Rejected table
         String createRejectTable = "CREATE TABLE " + REJECT_TABLE + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -56,8 +67,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_EPF + " TEXT, " +
                 COL_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
         db.execSQL(createRejectTable);
+=======
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
 
         // Users table
+
         String createUserTable = "CREATE TABLE " + USER_TABLE + " (" +
                 USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 USER_EMAIL + " TEXT UNIQUE, " +
@@ -73,7 +87,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+<<<<<<< HEAD
     //---------------- USERS ----------------
+=======
+
+    //  Insert new user (for Sign In)
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
     public boolean insertUser(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -84,6 +103,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
+<<<<<<< HEAD
+=======
+
+    public boolean checkUser(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = { USER_ID };
+        String selection = USER_EMAIL + "=? AND " + USER_PASSWORD + "=?";
+        String[] selectionArgs = { email, password };
+
+
+    //  Check if user email already exists (for Sign In)
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
     public boolean checkEmailExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(USER_TABLE, new String[]{USER_ID}, USER_EMAIL + "=?",
@@ -93,8 +125,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return exists;
     }
 
+<<<<<<< HEAD
     // ✅ Check user login (email + password)
+=======
+
+    //  Check email/password match (for Login)
+>>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
     public boolean checkUser(String email, String password) {
+
+
+    public boolean checkEmailExists(String email) {
+
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(
                 "SELECT * FROM " + USER_TABLE + " WHERE " + USER_EMAIL + "=? AND " + USER_PASSWORD + "=?",
@@ -140,4 +181,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + REJECT_TABLE, null);
     }
+
 }
