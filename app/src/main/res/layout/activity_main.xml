@@ -60,20 +60,18 @@ tools:ignore="ExtraText">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174"
         tools:ignore="MissingConstraints,TextSizeCheck,TextContrastCheck" />
-
     <EditText
         android:id="@+id/email"
         android:layout_width="269dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:autofillHints=""
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:hint="@string/enter_your_email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:textColorLink="@color/black"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/bottomLogo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,13 +86,12 @@ tools:ignore="ExtraText">
         android:layout_width="269dp"
         android:layout_height="48dp"
         android:layout_marginTop="60dp"
-        android:autofillHints=""
         android:background="@color/white"
         android:backgroundTint="@color/white"
         android:hint="@string/enter_your_password"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:textColorLink="@color/black"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,6 +100,7 @@ tools:ignore="ExtraText">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.645"
         tools:ignore="DuplicateIds,TextContrastCheck" />
+
 
     <Button
     android:id="@+id/signinBtn"

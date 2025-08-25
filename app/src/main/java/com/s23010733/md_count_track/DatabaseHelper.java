@@ -10,7 +10,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Database info
     public static final String DB_NAME = "MDCountTrack.db";
-    public static final int DB_VERSION = 3; // bumped version
+    public static final int DB_VERSION = 3;
 
     // Accepted Data Table
     public static final String ACCEPT_TABLE = "accepted_data";
@@ -73,7 +73,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // Sign In → insert user
+    //---------------- USERS ----------------
     public boolean insertUser(String email, String password) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -84,7 +84,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    // Check if email exists
     public boolean checkEmailExists(String email) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(USER_TABLE, new String[]{USER_ID}, USER_EMAIL + "=?",
@@ -94,15 +93,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return exists;
     }
 
-    // Login → check user
+    // ✅ Check user login (email + password)
     public boolean checkUser(String email, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(USER_TABLE, new String[]{USER_ID},
-                USER_EMAIL + "=? AND " + USER_PASSWORD + "=?",
-                new String[]{email, password}, null, null, null);
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM " + USER_TABLE + " WHERE " + USER_EMAIL + "=? AND " + USER_PASSWORD + "=?",
+                new String[]{email, password}
+        );
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         return exists;
     }
 
+    //---------------- ACCEPT DATA ----------------
+    public boolean insertAccepted(String barcode, int qty, String shift) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_BARCODE, barcode);
+        values.put(COL_QTY, qty);
+        values.put(COL_SHIFT, shift);
+        long result = db.insert(ACCEPT_TABLE, null, values);
+        db.close();
+        return result != -1;
+    }
+
+    public Cursor getAllAccepted() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + ACCEPT_TABLE, null);
+    }
+
+    //---------------- REJECT DATA ----------------
+    public boolean insertRejected(String barcode, String reason, int qty, String shift, String epf) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_BARCODE, barcode);
+        values.put(COL_REASON, reason);
+        values.put(COL_QTY, qty);
+        values.put(COL_SHIFT, shift);
+        values.put(COL_EPF, epf);
+        long result = db.insert(REJECT_TABLE, null, values);
+        db.close();
+        return result != -1;
+    }
+
+    public Cursor getAllRejected() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + REJECT_TABLE, null);
+    }
 }
