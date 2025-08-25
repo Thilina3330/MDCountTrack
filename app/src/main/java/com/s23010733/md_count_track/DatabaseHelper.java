@@ -11,12 +11,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DB_NAME = "MDCountTrack.db";
     public static final int DB_VERSION = 3;
 
-<<<<<<< HEAD
-    // Accepted Data Table
-=======
-    //Accepted data table
-
->>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
+    // ---------- ACCEPTED TABLE ----------
     public static final String ACCEPT_TABLE = "accepted_data";
     public static final String COL_ID = "id";
     public static final String COL_BARCODE = "barcode";
@@ -24,18 +19,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_SHIFT = "shift";
     public static final String COL_TIMESTAMP = "timestamp";
 
-<<<<<<< HEAD
-    // Rejected Data Table
+    // ---------- REJECTED TABLE ----------
     public static final String REJECT_TABLE = "rejected_data";
     public static final String COL_REASON = "reason";
     public static final String COL_EPF = "epf";
 
-    // Users Table
-=======
-
-    //  Users table (for login/signup)
-
->>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
+    // ---------- USER TABLE ----------
     public static final String USER_TABLE = "users";
     public static final String USER_ID = "id";
     public static final String USER_EMAIL = "email";
@@ -47,7 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Accepted table
+        // ACCEPTED DATA TABLE
         String createAcceptTable = "CREATE TABLE " + ACCEPT_TABLE + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_BARCODE + " TEXT, " +
@@ -56,8 +45,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
         db.execSQL(createAcceptTable);
 
-<<<<<<< HEAD
-        // Rejected table
+        // REJECTED DATA TABLE
         String createRejectTable = "CREATE TABLE " + REJECT_TABLE + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_BARCODE + " TEXT, " +
@@ -67,11 +55,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COL_EPF + " TEXT, " +
                 COL_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP)";
         db.execSQL(createRejectTable);
-=======
->>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
 
-        // Users table
-
+        // USER TABLE
         String createUserTable = "CREATE TABLE " + USER_TABLE + " (" +
                 USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 USER_EMAIL + " TEXT UNIQUE, " +
@@ -87,66 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-<<<<<<< HEAD
-    //---------------- USERS ----------------
-=======
-
-    //  Insert new user (for Sign In)
->>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
-    public boolean insertUser(String email, String password) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(USER_EMAIL, email);
-        values.put(USER_PASSWORD, password);
-        long result = db.insert(USER_TABLE, null, values);
-        db.close();
-        return result != -1;
-    }
-
-<<<<<<< HEAD
-=======
-
-    public boolean checkUser(String email, String password) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        String[] columns = { USER_ID };
-        String selection = USER_EMAIL + "=? AND " + USER_PASSWORD + "=?";
-        String[] selectionArgs = { email, password };
-
-
-    //  Check if user email already exists (for Sign In)
->>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
-    public boolean checkEmailExists(String email) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(USER_TABLE, new String[]{USER_ID}, USER_EMAIL + "=?",
-                new String[]{email}, null, null, null);
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        return exists;
-    }
-
-<<<<<<< HEAD
-    // ✅ Check user login (email + password)
-=======
-
-    //  Check email/password match (for Login)
->>>>>>> 432d5072ebb4aa9046554b114f62e6a35f1bbd54
-    public boolean checkUser(String email, String password) {
-
-
-    public boolean checkEmailExists(String email) {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(
-                "SELECT * FROM " + USER_TABLE + " WHERE " + USER_EMAIL + "=? AND " + USER_PASSWORD + "=?",
-                new String[]{email, password}
-        );
-        boolean exists = cursor.getCount() > 0;
-        cursor.close();
-        return exists;
-    }
-
-    //---------------- ACCEPT DATA ----------------
+    // ---------- ACCEPTED DATA ----------
     public boolean insertAccepted(String barcode, int qty, String shift) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -158,23 +84,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
+    public Cursor getAcceptedByShift(String shift) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + ACCEPT_TABLE + " WHERE " + COL_SHIFT + "=?", new String[]{shift});
+    }
+
     public Cursor getAllAccepted() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.rawQuery("SELECT * FROM " + ACCEPT_TABLE, null);
     }
 
-    //---------------- REJECT DATA ----------------
-    public boolean insertRejected(String barcode, String reason, int qty, String shift, String epf) {
+    // ---------- REJECTED DATA ----------
+    public boolean insertRejected(String barcode, String qty, int shift, String reason, String epf) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COL_BARCODE, barcode);
-        values.put(COL_REASON, reason);
         values.put(COL_QTY, qty);
         values.put(COL_SHIFT, shift);
+        values.put(COL_REASON, reason);
         values.put(COL_EPF, epf);
         long result = db.insert(REJECT_TABLE, null, values);
         db.close();
         return result != -1;
+    }
+
+    public Cursor getRejectedByShift(String shift) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + REJECT_TABLE + " WHERE " + COL_SHIFT + "=?", new String[]{shift});
     }
 
     public Cursor getAllRejected() {
@@ -182,4 +118,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM " + REJECT_TABLE, null);
     }
 
+    // ---------- USER DATA ----------
+    public boolean insertUser(String email, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(USER_EMAIL, email);
+        values.put(USER_PASSWORD, password);
+        long result = db.insert(USER_TABLE, null, values);
+        db.close();
+        return result != -1;
+    }
+
+    public boolean checkUser(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE " +
+                USER_EMAIL + "=? AND " + USER_PASSWORD + "=?", new String[]{email, password});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
+    public boolean checkEmailExists(String email) {
+        return false;
+    }
 }
